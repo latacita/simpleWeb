@@ -5,18 +5,19 @@
   <title>Jugando con Javascript</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.00">
   <link rel="stylesheet" href="miniWeb.css">
+  <script src="miniWeb(vanilla).js"></script>
 </head>
-<body>
+<body onload="init();">
   <h1 class="header"> Jugando un poco con Javascript</h1>
   <div class="bodyContainer">
     <div class="sidebar">
       <ul class="menu" id="menu">
-        <li> <a href="#Negro" class="active"> Negro </a> </li>
-        <li> <a href="#Azul">  Azul  </a> </li>
-        <li> <a href="#Rojo">  Rojo  </a> </li>
+        <li> <a href="#Negro" onclick="changeContentColor('black','blackButton');" id="blackButton"> Negro </a> </li>
+        <li> <a href="#Azul" onclick="changeContentColor('blue','blueButton');" id="blueButton"> Azul </a>  </li>
+        <li> <a href="#Rojo" onclick="changeContentColor('red','redButton');" id="redButton"> Rojo </a>  </li>
       </ul>
     </div>
-    <div class="content">
+    <div class="content" id="contentContainer">
       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus lorem. Proin turpis justo, sodales ac lacus a, vestibulum ornare diam. Aenean convallis sit amet risus vitae auctor. Pellentesque eros lorem, aliquam sit amet arcu vitae, tempor gravida ipsum. Aliquam bibendum turpis eu dolor malesuada, imperdiet pulvinar sapien commodo. Proin vel turpis laoreet, lobortis arcu a, bibendum ante. Duis sed justo sit amet turpis tincidunt fermentum. Fusce ornare dapibus velit at maximus.</p>
       <p> Mauris faucibus massa in dui consequat, id semper nunc accumsan. Sed aliquet, dolor quis cursus lacinia, tellus erat euismod turpis, nec imperdiet ligula arcu quis lorem. Aenean leo ligula, gravida non ultrices eu, consequat at nisi. Duis ac luctus libero. Praesent at ultrices magna. Cras condimentum imperdiet sapien vel viverra. Integer a molestie nisl. Nam quis erat egestas, bibendum justo et, pretium lacus. Aliquam sem leo, commodo a sollicitudin et, fringilla sit amet nulla. Proin pellentesque eros sit amet commodo finibus. Sed lobortis non sem nec aliquet. Cras eget blandit nunc. Vestibulum eget ultrices arcu. </p>
       <p> Etiam malesuada risus in orci venenatis, sed ullamcorper lacus malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at augue quis augue accumsan posuere. Aenean ut blandit diam. Etiam quis mattis libero. Praesent convallis turpis sed maximus eleifend. Nam id consequat tortor. Donec ac tempus felis, nec ornare turpis. Cras bibendum justo vitae accumsan iaculis. Cras sit amet odio ut ipsum consequat tempus. Quisque a condimentum dui. Etiam sed dignissim metus. Mauris pretium neque mi, eget blandit ante lacinia vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
