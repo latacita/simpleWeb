@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  border-bottom-style : solid;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  text-align :center;
+  width : 100%;
+  margin : 0;
+}
+
+.bodyContainer {
+  border-bottom-style: solid;
+  overflow: auto;
+}
+
+.sidebar {
+  float: left;
+  width: 15%;
+}
+
+.menu {
+  list-style-type: none;
+  width : 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0em;
+  padding-right: 0em;
+}
+
+ul[class=menu] li {
+  margin-bottom: 0.5em;
+}
+
+ul[class=menu] li a {
+    text-decoration: none;
+    background: LightSteelBlue;
+    display: block;
+    text-align: center;
+    color: black;
+}
+
+ul[class=menu] li a:link {
+}
+
+ul[class=menu] li a:visited {
+}
+
+ul[class=menu] li a:hover {
+    color: white;
+    background-color : SteelBlue;
+}
+
+ul[class=menu] li a.active {
+    color: red;
+}
+
+.content {
+  float :left;
+  width : 85%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-top: 0;
+}
