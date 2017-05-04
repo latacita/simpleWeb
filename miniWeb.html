@@ -5,20 +5,22 @@
   <title>Jugando con Javascript</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.00">
   <link rel="stylesheet" href="miniWeb.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="miniWeb(jQuery).js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="miniWeb(AngularJS).js"></script>
 </head>
-<body onload="init();">
+<body ng-app="miniWeb">
   <h1 class="header"> Jugando un poco con Javascript</h1>
-  <div class="bodyContainer">
+  <div class="bodyContainer" ng-controller="miniWebController">
     <div class="sidebar">
       <ul class="menu" id="menu">
-        <li> <a href="#Negro" data-color="black"> Negro </a> </li>
-        <li> <a href="#Azul" data-color="blue"> Azul </a>  </li>
-        <li> <a href="#Rojo" data-color="red"> Rojo </a>  </li>
+        <li ng-repeat="entry in menuEntries">
+          <a href="#{{entry.name}}"
+            ng-class="{'active': activeButton == '{{entry.value}}'}"
+            ng-click="changeContentColor(entry.value)"> {{entry.name}} </a>
+        </li>
       </ul>
     </div>
-    <div class="content" id="contentContainer">
+    <div class="content" ng-style="{color: activeButton}">
       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus lorem. Proin turpis justo, sodales ac lacus a, vestibulum ornare diam. Aenean convallis sit amet risus vitae auctor. Pellentesque eros lorem, aliquam sit amet arcu vitae, tempor gravida ipsum. Aliquam bibendum turpis eu dolor malesuada, imperdiet pulvinar sapien commodo. Proin vel turpis laoreet, lobortis arcu a, bibendum ante. Duis sed justo sit amet turpis tincidunt fermentum. Fusce ornare dapibus velit at maximus.</p>
       <p> Mauris faucibus massa in dui consequat, id semper nunc accumsan. Sed aliquet, dolor quis cursus lacinia, tellus erat euismod turpis, nec imperdiet ligula arcu quis lorem. Aenean leo ligula, gravida non ultrices eu, consequat at nisi. Duis ac luctus libero. Praesent at ultrices magna. Cras condimentum imperdiet sapien vel viverra. Integer a molestie nisl. Nam quis erat egestas, bibendum justo et, pretium lacus. Aliquam sem leo, commodo a sollicitudin et, fringilla sit amet nulla. Proin pellentesque eros sit amet commodo finibus. Sed lobortis non sem nec aliquet. Cras eget blandit nunc. Vestibulum eget ultrices arcu. </p>
       <p> Etiam malesuada risus in orci venenatis, sed ullamcorper lacus malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at augue quis augue accumsan posuere. Aenean ut blandit diam. Etiam quis mattis libero. Praesent convallis turpis sed maximus eleifend. Nam id consequat tortor. Donec ac tempus felis, nec ornare turpis. Cras bibendum justo vitae accumsan iaculis. Cras sit amet odio ut ipsum consequat tempus. Quisque a condimentum dui. Etiam sed dignissim metus. Mauris pretium neque mi, eget blandit ante lacinia vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
