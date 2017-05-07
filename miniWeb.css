@@ -57,6 +57,13 @@ ul[class=menu] li a.active {
     color: red;
 }
 
+.menuSeparator {
+  border-bottom-style: solid;
+  border-bottom-color: gray;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
 .content {
   float :left;
   width : 85%;

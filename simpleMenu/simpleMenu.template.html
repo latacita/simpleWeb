@@ -1,7 +1,9 @@
 <ul class="menu" id="menu">
   <li ng-repeat="entry in $ctrl.menuEntries">
-    <a href="#{{entry.name}}"
+    <a href=" {{entry.link}}"
       ng-class="{'active': $ctrl.activeButton == '{{entry.value}}'}"
-      ng-click="$ctrl.buttonClicked(entry.value)"> {{entry.name}} </a>
+      ng-click="$ctrl.buttonClicked(entry.value)" ng-if="entry.hasOwnProperty('link')"> {{entry.name}} </a>
+    <a href ng-class="{'active': $ctrl.activeButton == '{{entry.value}}'}"
+        ng-click="$ctrl.buttonClicked(entry.value)" ng-if="!entry.hasOwnProperty('link')"> {{entry.name}} </a>
   </li>
 </ul>
