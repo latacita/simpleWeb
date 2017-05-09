@@ -1,0 +1,30 @@
+{
+	"publicationList" :
+		[
+			{
+				"author" : "Martin Fowler", 
+				"title"  : "Patterns of Enterprise Application Architecture",
+				"publisher" : "Addison-Wesley"
+			},
+			{
+				"author" : "Robert C. Martin", 
+				"title"  : "Clean code: A Handbook of Agile Software Craftsmanship",
+				"publisher" : "Prentice Hall"
+			},
+			{
+				"author" : "Dino Esposito", 
+				"title"  : "Microsoft .NET: Architecting Applications for the Enterprise",
+				"publisher" : "Microsoft Press"
+			},
+			{
+				"author" : "Srinivas Sai Sriparasa", 
+				"title"  : "JavaScript and JSON Essentials",
+				"publisher" : "Packt"
+			},
+			{
+				"author" : "Erich Gamma", 
+				"title"  : "Design Patterns",
+				"publisher" : "Addison-Wesley"
+			}
+		]
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8" />
+	<title>Tabla Filtrable y Ordenable</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="tablaLibros.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<!-- <script src="commontypes.js"></script> -->
+	<script src="orderingIcons/orderingIcons.component.js"></script>
+	<script src="tablaLibrosApp.js"></script>
+<body>
+	<h1 class="header">Listado de Libros</h1>
+	<div ng-app="TablaLibrosApp" ng-controller="TablaLibrosController as ctrl">
+		<div class="contentContainer"
+      ng-show="dataLoaded">
+			<div class="tableSidebar">&nbsp;</div>
+			<div class="tableContainer">
+				<table class="bookTable">
+					<tr class="tableHeader">
+						<th>
+							<div class="tableHeaderText">Autor</div>
+							<div class="tableHeaderIcons">
+								<ordering-icons column="author"
+									on-icon-clicked="ctrl.onOrderingIconClicked(column,asc)">
+								</ordering-icons>
+							</div>
+						</th>
+						<th>
+							Título
+							<div class="tableHeaderIcons">
+								<ordering-icons column="title"
+									on-icon-clicked="ctrl.onOrderingIconClicked(column,asc)"></ordering-icons>
+							</div>
+						</th>
+						<th>
+							<div class="tableHeaderText" style="min-width:10em;">Editorial</div>
+							<div class="tableHeaderIcons">
+									<ordering-icons column="publisher"
+										on-icon-clicked="ctrl.onOrderingIconClicked(column,asc)"></ordering-icons>
+							</div>
+						</th>
+					</tr>
+					<tr ng-repeat="pub in publications | filter: ctrl.isPublisherInFilterSet() |  orderBy: orderingCriteria">
+						<td> {{pub.author}} </td>
+						<td> {{pub.title}} </td>
+						<td> {{pub.publisher}} </td>
+					</tr>
+				</table>
+				<!--
+				<div class="orderAndFilterData">
+					<div>Ordering Criteria : {{orderingCriteria}}</div>
+					<span>Filter Option :
+						{{ }} </span>
+				</div> -->
+			</div>
+			<div class="tableSidebar">
+				<fieldset>
+					<legend>Publishers to Show</legend>
+					<div ng-repeat="p in publisherList">
+						<input type="checkbox"
+							ng-model="publishersFilter[p]"
+							name="{{p}}"></input>
+						{{p}}
+					<div />
+				</fieldset>
+			</div>
+		</div>
+		<div class="contentContainer" ng-hide="dataLoaded">
+			<p> Publication list cannot be loaded </p>
+		</div>
+	</div>
+</body>
+</html>
